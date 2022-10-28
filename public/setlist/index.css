@@ -1,0 +1,32 @@
+input, button {
+    float: right;
+    
+}
+
+button {
+    margin-left: 50px;
+}
+#create {
+    margin: 0 auto 15px;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* p {
+    text-align: center;
+} */
+
+.column {
+    flex: 50%;
+}
+
+.row {
+    display: flex;
+}
+
+h2 {
+    text-align: center;
+}
