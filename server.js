@@ -1,14 +1,14 @@
 //dependencies
-const express = require("express");//
-const mongoose = require("mongoose"); //
+const express = require("express");
+const mongoose = require("mongoose");
 const setlistController = require('./controllers/setlist.js');
-const methodOverride = require('method-override')//
+const methodOverride = require('method-override')
 
 
-require("dotenv").config(); //
+require("dotenv").config();
 const MONGODB_URI = process.env.MONGODB_URI;
 
-const app = express();//
+const app = express();
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -24,14 +24,15 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use('/setlist', setlistController);
 
-//heroku test//
+//heroku test
 app.get('/', (req, res) => {
-    res.send('hello world');
+    res.send('<a href="setlist">continue to the app</a>');
 })
 
-//listener//
+//listener
 const PORT = process.env.PORT;
 app.listen(PORT || 3000, ()=> {
     console.log("setlystr running");
 });
-//
+
+module.exports = app
